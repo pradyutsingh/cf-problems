@@ -36,29 +36,24 @@ int dkx8[] = { -1, 1, -1, 1, -2, -2, 2, 2};
 int dky8[] = {2, 2, -2, -2, 1, -1, 1, -1};
 // ------------------------------------------------------------------//
 
-// A. Soft Drinking
-// This winter is so cold in Nvodsk! A group of n friends decided to 
-// buy k bottles of a soft drink called "Take-It-Light" to warm up a bit.
-//  Each bottle has l milliliters of the drink. Also they bought c limes
-//   and cut each of them into d slices. After that they found p grams of 
-//   salt.
-// To make a toast, each friend needs nl milliliters of the drink, 
-// a slice of lime and np grams of salt. The friends want to make as many
-//  toasts as they can, provided they all drink the same amount. How
-//   many toasts can each friend make?
 
 void solve() {
-	int n, k, l, c, d, p, nl, np;
-	cin>>n>>k>>l>>c>>d>>p>>nl>>np;
+	int n;
+	cin>>n;
+	unordered_map<string,int> mp;
+	mp["Tetrahedron"] = 4;
+	mp["Cube"] = 6;
+	mp["Octahedron"] = 8;
+	mp["Dodecahedron"] = 12;
+	mp["Icosahedron"] = 20;
+	ll sum = 0;
 
-	int totalcapacity = k*l;
-	int totallimes = c*d;
-	int x = floor(totalcapacity/nl);
-	int y = floor(p/np);
-	int res = min(x, min(y, totallimes));
-	res = floor(res/n);
-	cout<<res<<endl;
-
+	while(n--){
+		string s;
+		cin>>s;
+		sum += mp[s];
+	}
+	cout<<sum<<endl;
 };
 
 void c_p_c()

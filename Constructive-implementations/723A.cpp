@@ -36,29 +36,16 @@ int dkx8[] = { -1, 1, -1, 1, -2, -2, 2, 2};
 int dky8[] = {2, 2, -2, -2, 1, -1, 1, -1};
 // ------------------------------------------------------------------//
 
-// A. Soft Drinking
-// This winter is so cold in Nvodsk! A group of n friends decided to 
-// buy k bottles of a soft drink called "Take-It-Light" to warm up a bit.
-//  Each bottle has l milliliters of the drink. Also they bought c limes
-//   and cut each of them into d slices. After that they found p grams of 
-//   salt.
-// To make a toast, each friend needs nl milliliters of the drink, 
-// a slice of lime and np grams of salt. The friends want to make as many
-//  toasts as they can, provided they all drink the same amount. How
-//   many toasts can each friend make?
+// A. The New Year: Meeting Friends
 
 void solve() {
-	int n, k, l, c, d, p, nl, np;
-	cin>>n>>k>>l>>c>>d>>p>>nl>>np;
-
-	int totalcapacity = k*l;
-	int totallimes = c*d;
-	int x = floor(totalcapacity/nl);
-	int y = floor(p/np);
-	int res = min(x, min(y, totallimes));
-	res = floor(res/n);
+	int arr[3];
+	rep(i,3){
+		cin>>arr[i];
+	}
+	sort(arr, arr+3);
+	int res = (arr[1]-arr[0]) + (arr[2]-arr[1]);
 	cout<<res<<endl;
-
 };
 
 void c_p_c()
