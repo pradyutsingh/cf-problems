@@ -38,20 +38,17 @@ int dky8[] = {2, 2, -2, -2, 1, -1, 1, -1};
 
 
 void solve() {
-	int n;
-	cin>>n;
-	bool hard = false;
-	rep(i,n){
-		int x;
-		cin>>x;
-		if(x == 1){
-			hard = true;
-		}
+	int k, n, w;
+	cin>>k>>n>>w;
+	int sum = 0;
+	for(int i = 1;i<=w;i++){
+		sum += i*k;
 	}
-	if(hard){
-		cout<<"HARD"<<endl;
+	int res = sum-n;
+	if(res <= 0){
+		cout<<"0"<<endl;
 	}else{
-		cout<<"EASY"<<endl;
+		cout<<res<<endl;
 	}
 };
 

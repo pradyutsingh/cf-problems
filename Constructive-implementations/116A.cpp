@@ -40,19 +40,16 @@ int dky8[] = {2, 2, -2, -2, 1, -1, 1, -1};
 void solve() {
 	int n;
 	cin>>n;
-	bool hard = false;
+	int currcap = 0;
+	int maxcap = 0;
 	rep(i,n){
-		int x;
-		cin>>x;
-		if(x == 1){
-			hard = true;
-		}
+		int a,b;
+		cin>>a>>b;
+		currcap-=a;
+		currcap+=b;
+		maxcap = max(maxcap, currcap);
 	}
-	if(hard){
-		cout<<"HARD"<<endl;
-	}else{
-		cout<<"EASY"<<endl;
-	}
+	cout<<maxcap<<endl;
 };
 
 void c_p_c()

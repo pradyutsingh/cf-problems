@@ -38,21 +38,17 @@ int dky8[] = {2, 2, -2, -2, 1, -1, 1, -1};
 
 
 void solve() {
-	int n;
-	cin>>n;
-	bool hard = false;
-	rep(i,n){
-		int x;
-		cin>>x;
-		if(x == 1){
-			hard = true;
+	string s;
+	cin>>s;
+
+	int count = 0;
+	rep(i,s.length()){
+		if(s[i] == '4' or s[i] == '7'){
+			count++;
 		}
 	}
-	if(hard){
-		cout<<"HARD"<<endl;
-	}else{
-		cout<<"EASY"<<endl;
-	}
+	// cout<<count<<endl;
+	cout<<((count == 7 or count == 4)?"YES":"NO")<<endl;
 };
 
 void c_p_c()

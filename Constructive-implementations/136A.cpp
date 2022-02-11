@@ -40,18 +40,17 @@ int dky8[] = {2, 2, -2, -2, 1, -1, 1, -1};
 void solve() {
 	int n;
 	cin>>n;
-	bool hard = false;
-	rep(i,n){
+	mii mp;
+	vi arr;
+	repk(i,1,n){
 		int x;
 		cin>>x;
-		if(x == 1){
-			hard = true;
-		}
+		arr.pb(x);
+		mp[x] = i;
 	}
-	if(hard){
-		cout<<"HARD"<<endl;
-	}else{
-		cout<<"EASY"<<endl;
+
+	repk(i,1,n){
+		cout<<mp[i]<<" ";
 	}
 };
 
